@@ -186,13 +186,7 @@
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<fadetime>50</fadetime>
 			</control>
-			<control type="image">
-				<left>0</left>
-				<top>90</top>
-				<right>0</right>
-				<bottom>0</bottom>
-				<texture>diffuse/extraposter-ref-blur-rev.png</texture>
-			</control>
+
 		</control>
 	</include>
 </includes>

@@ -5,26 +5,7 @@
  	<onunload>ClearProperty(infobackground,home)</onunload>
 	<controls>
 		<include>DefaultBackground</include>
-		<control type="image">
-            		<include>OpenClose_Left</include>      
-            		<visible>Skin.HasSetting(show_musicclearlogos)</visible>
-            		<top>15</top>
-            		<left>186</left>
-            		<width>332</width>             
-            		<height>150</height>
-            		<aspectratio>keep</aspectratio>
-            		<texture background="true">$VAR[ClearLogoMusicTop]</texture>
-        	</control>
-        	<control type="image">
-        			<include>OpenClose_Right</include>
-        			<visible>Skin.HasSetting(show_studiologos)</visible>	
-            	          	<top>25</top>
-            	      		<right>85</right>			
-				<width>200</width>
-				<height>135</height>
-				<aspectratio align="center">keep</aspectratio>
-				<texture>$INFO[Skin.String(recordlabels.path),,/]$INFO[ListItem.Property(Album_Label),,.png]</texture>				
-			</control>	
+
 		<control type="group">
 			<include>OpenClose_Left</include>
 			<top>158</top>

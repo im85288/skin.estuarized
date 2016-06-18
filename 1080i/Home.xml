@@ -916,7 +916,7 @@
                             <font>font13</font>
                             <width>1310</width>
                             <shadowcolor>black</shadowcolor>
-                            <label>$INFO[System.AddonVersion(skin.estuary.karma),Version ,]</label>
+                            <label>$INFO[Window(Home).Property(SkinHelper.skinTitle)]</label>
                         </control>
                         <control type="label">
                             <top>175</top>

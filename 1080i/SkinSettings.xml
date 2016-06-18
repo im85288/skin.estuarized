@@ -235,21 +235,6 @@
                         <onclick>Skin.ToggleSetting(show_weatherinfo)</onclick>
                         <selected>Skin.HasSetting(show_weatherinfo)</selected>
                     </control>
-                    <control type="radiobutton" id="604">
-                        <label>$LOCALIZE[31094]</label>
-                        <width>1256</width>
-                        <include>DefaultSettingButton</include>
-                        <onclick>Skin.ToggleSetting(show_mediaflags)</onclick>
-                        <selected>Skin.HasSetting(show_mediaflags)</selected>
-                    </control>
-                    <control type="radiobutton" id="646">
-                        <label>- $LOCALIZE[40055]</label>
-                        <width>1256</width>
-                        <include>DefaultSettingButton</include>
-                        <onclick>Skin.ToggleSetting(enable_mediaflagscolor)</onclick>
-                        <selected>Skin.HasSetting(enable_mediaflagscolor)</selected>
-                        <visible>Skin.HasSetting(show_mediaflags)</visible>
-                    </control>
                     <control type="radiobutton" id="647">
                         <label>40056</label>
                         <width>1256</width>
@@ -257,38 +242,7 @@
                         <onclick>Skin.ToggleSetting(Skin_EnableAnimatedPosters)</onclick>
                         <selected>Skin.HasSetting(Skin_EnableAnimatedPosters)</selected>
                     </control>
-                    <control type="radiobutton" id="609">
-                        <label>40000</label>
-                        <width>1256</width>
-                        <include>DefaultSettingButton</include>
-                        <onclick>Skin.ToggleSetting(show_clearlogos)</onclick>
-                        <selected>Skin.HasSetting(show_clearlogos)</selected>
-                    </control>
-                    <control type="radiobutton" id="643">
-                        <label>40052</label>
-                        <width>1256</width>
-                        <include>DefaultSettingButton</include>
-                        <selected>Skin.HasSetting(show_studiologos)</selected>
-                        <onclick>Skin.ToggleSetting(show_studiologos)</onclick>
-                    </control>
-                    <control type="button" id="644">
-                        <label>- $LOCALIZE[40053]</label>
-                        <label2>$VAR[Label_SkinSetting_StudioLogos]</label2>
-                        <width>1256</width>
-                        <include>DefaultSettingButton</include>
-                        <onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=studiologos&amp;type=resource.images.studios)</onclick>
-                        <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
-                        <visible>Skin.HasSetting(show_studiologos)</visible>
-                    </control>
-                    <control type="button" id="649">
-                        <label>- $LOCALIZE[40062]</label>
-                        <label2>$VAR[Label_SkinSetting_RecordLabels]</label2>
-                        <width>1256</width>
-                        <include>DefaultSettingButton</include>
-                        <onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=recordlabels&amp;type=resource.images.recordlabels)</onclick>
-                        <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
-                        <visible>Skin.HasSetting(show_studiologos)</visible>
-                    </control>
+
                     <control type="image" id="11">
                         <description>separator image</description>
                         <height>3</height>
@@ -303,15 +257,7 @@
                         <onclick>Skin.Reset(no_animations)</onclick>
                         <onclick>Skin.Reset(autoscroll)</onclick>
                         <onclick>Skin.Reset(show_weatherinfo)</onclick>
-                        <onclick>Skin.Reset(show_mediaflags)</onclick>
-                        <onclick>Skin.Reset(enable_mediaflagscolor)</onclick>
                         <onclick>Skin.Reset(Skin_EnableAnimatedPosters)</onclick>
-                        <onclick>Skin.Reset(show_clearlogos)</onclick>
-                        <onclick>Skin.Reset(show_musicclearlogos)</onclick>
-                        <onclick>Skin.Reset(artworklocation)</onclick>
-                        <onclick>Skin.Reset(show_studiologos)</onclick>
-                        <onclick>Skin.Reset(studiologos.name)</onclick>
-                        <onclick>Skin.Reset(recordlabels.name)</onclick>
                     </control>
                 </control>
                 <control type="grouplist" id="630">
@@ -840,14 +786,14 @@
                     </control>
                     <control type="radiobutton" id="6422">
                         <width>1256</width>
-                        <label>resource.uisounds.fromashes $INFO[System.AddonVersion(resource.uisounds.fromashes),(,)]</label>
+                        <label>weather.openweathermap.extended $INFO[System.AddonVersion(weather.openweathermap.extended),(,)]</label>
                         <textureradioonfocus colordiffuse="ff00991f">buttons/status-on.png</textureradioonfocus>
                         <textureradioonnofocus colordiffuse="ff00991f">buttons/status-on.png</textureradioonnofocus>
                         <textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
                         <textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
-                        <onclick condition="!System.HasAddon(resource.uisounds.fromashes)">InstallAddon(resource.uisounds.fromashes)</onclick>
-                        <onclick condition="System.HasAddon(resource.uisounds.fromashes)">Addon.OpenSettings(resource.uisounds.fromashes)</onclick>
-                        <selected>System.HasAddon(resource.uisounds.fromashes)</selected>
+                        <onclick condition="!System.HasAddon(weather.openweathermap.extended)">InstallAddon(weather.openweathermap.extended)</onclick>
+                        <onclick condition="System.HasAddon(weather.openweathermap.extended)">Addon.OpenSettings(weather.openweathermap.extended)</onclick>
+                        <selected>System.HasAddon(weather.openweathermap.extended)</selected>
                         <include>DefaultSettingButton</include>
                     </control>
                     <control type="radiobutton" id="6423">

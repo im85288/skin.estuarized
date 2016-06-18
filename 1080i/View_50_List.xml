@@ -288,7 +288,7 @@
             <ondown>$PARAM[list_id]</ondown>
             <viewtype label="$PARAM[viewtype_label]">list</viewtype>
             <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
-            <focusedlayout height="63">
+            <focusedlayout height="87">
                 <control type="button">
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
@@ -296,95 +296,92 @@
                     <onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
                     <onfocus condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,info=blur,id='"$VAR[PosterImage]"',radius=6,prefix=ArtInfo)</onfocus>
                 </control>
+
                 <control type="image">
                     <left>0</left>
                     <top>0</top>
                     <width>710</width>
-                    <height>63</height>
-                    <texture border="90,3,90,3">lists/separator.png</texture>
-                    <visible>!Control.HasFocus($PARAM[list_id])</visible>
-                </control>
-                <control type="image">
-                    <left>0</left>
-                    <top>0</top>
-                    <width>710</width>
-                    <height>65</height>
-                    <texture colordiffuse="$VAR[ColourFocus]">lists/focus.png</texture>
-                    <visible>Control.HasFocus($PARAM[list_id])</visible>
-                </control>
-                <control type="image">
-                    <left>0</left>
-                    <top>0</top>
-                    <width>710</width>
-                    <height>65</height>
+                    <height>75</height>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
-                    <visible>Control.HasFocus($PARAM[list_id])</visible>
-                </control>
-                <control type="label">
-                    <left>70</left>
-                    <top>0</top>
-                    <height>63</height>
-                    <width>560</width>
-                    <aligny>center</aligny>
-                    <scroll>true</scroll>
-                    <font>fontContextMenu</font>
-                    <label>$INFO[ListItem.Label]</label>
-                    <shadowcolor>text_shadow</shadowcolor>
-                </control>
-                <control type="label">
-                    <left>135</left>
-                    <top>0</top>
-                    <height>63</height>
-                    <width>555</width>
-                    <align>right</align>
-                    <aligny>center</aligny>
-                    <font>font12</font>
-                    <label>$VAR[ListLabel2Var]</label>
-                    <animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
-                    <shadowcolor>text_shadow</shadowcolor>
+                    <texture  border="2" fallback="DefaultVideo.png" background="true">$VAR[BannerImage]</texture>
+                    <bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+                    <bordersize>4</bordersize>
                 </control>
                 <control type="image">
-                    <left>21</left>
-                    <top>14</top>
-                    <width>38</width>
-                    <height>38</height>
-                    <texture>$VAR[ListWatchedIconVar]</texture>
-                    <animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>710</width>
+                    <height>78</height>
+                    <texture border="8" colordiffuse="$VAR[ColourFocus]">buttons/thumbnail_focused.png</texture>
                 </control>
-                <control type="image">
-                    <left>21</left>
-                    <top>14</top>
-                    <width>38</width>
-                    <height>38</height>
-                    <texture colordiffuse="$VAR[ColourFocus]">$VAR[ListWatchedIconVar]</texture>
-                    <animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
-                    <animation effect="fade" time="150">VisibleChange</animation>
-                    <visible>!Control.HasFocus($PARAM[list_id])</visible>
+
+                <control type="group">
+                    <animation type="Focus">
+                        <effect type="fade" start="0" end="100" time="300" />
+                    </animation>
+                    <animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+                    <control type="image">
+                        <left>5</left>
+                        <top>45</top>
+                        <width>700</width>
+                        <height>30</height>
+                        <texture>colors/black.png</texture>
+                        <animation effect="fade" start="0" end="70" time="50">Focus</animation>
+                    </control>
+                    <control type="image">
+                        <left>15</left>
+                        <top>45</top>
+                        <width>40</width>
+                        <height>30</height>
+                        <texture>$VAR[ListWatchedIconVar]</texture>
+                    </control>
+                    <control type="label">
+                        <left>60</left>
+                        <top>50</top>
+                        <width>710</width>
+                        <height>20</height>
+                        <font>font10</font>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="image">
+                        <right>93</right>
+                        <top>50</top>
+                        <width>22</width>
+                        <height>22</height>
+                        <texture>lists/played-total.png</texture>
+                        <visible>String.IsEqual(Listitem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+                    </control>
+                    <control type="label">
+                        <right>123</right>
+                        <top>50</top>
+                        <width>710</width>
+                        <height>20</height>
+                        <font>font10</font>
+                        <textcolor>$VAR[ColourFocus]</textcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$VAR[ListLabel2Var]</label>
+                    </control>
                 </control>
             </focusedlayout>
-            <itemlayout height="63">
-                <control type="image">
-                    <left>0</left>
-                    <top>3</top>
-                    <width>710</width>
-                    <height>63</height>
-                    <texture border="90,3,90,3">lists/separator.png</texture>
-                </control>
-                <control type="image">
-                    <left>21</left>
-                    <top>14</top>
-                    <width>38</width>
-                    <height>38</height>
-                    <texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
-                </control>
+            <itemlayout height="87">
                 <control type="image">
                     <left>0</left>
                     <top>0</top>
                     <width>710</width>
-                    <height>65</height>
+                    <height>75</height>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <texture diffuse="diffuse/extraposter-ref-blur-rev.png" background="true">$VAR[BannerImage]</texture>
+                    <texture  border="2" fallback="DefaultVideo.png" background="true">$VAR[BannerImage]</texture>
+                    <bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+                    <bordersize>4</bordersize>
+                </control>
+                <control type="image">
+                    <left>15</left>
+                    <top>45</top>
+                    <width>40</width>
+                    <height>30</height>
+                    <texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
                 </control>
             </itemlayout>
         </control>
@@ -394,7 +391,7 @@
             <width>12</width>
             <height>706</height>
             <onleft>$PARAM[list_id]</onleft>
-            <onright>$PARAM[list_id]</onright>
+            <onright>518995</onright>
             <orientation>vertical</orientation>
         </control>
         <!--<control type="group" id="$PARAM[list_id]600">

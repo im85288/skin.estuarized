@@ -61,9 +61,9 @@
 					<top>599</top>
 					<width>992</width>
 					<height>121</height>
-					<onup>5554</onup>
-					<ondown>5554</ondown>
-					<onback>5554</onback>
+					<onup>502</onup>
+					<ondown>502</ondown>
+					<onback>502</onback>
 					<preloaditems>8</preloaditems>
 					<focusposition>5</focusposition>
 					<autoscroll time="3000">!Control.HasFocus(518995)</autoscroll>
